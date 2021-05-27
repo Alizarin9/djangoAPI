@@ -13,15 +13,3 @@ def index(request):
     ai_shelf = prompt_and_response_data.objects.all()
     return render(request, 'index.html', {'shelf': shelf, 'ai_shelf': ai_shelf})
 
-# @login_required(login_url='/admin/')
-# def new_prompt(request):
-#     prompt = prompt_data()
-#     if request.method == 'POST':
-#         prompt = prompt_data(request.POST, request.FILES)
-#         if prompt.is_valid():
-#             prompt.save()
-#             return redirect('index')
-#         else:
-#             return HttpResponse("""your form has errors, reload on <a href = "{{ url : 'index'}}">reload</a>""")
-#     else:
-#         return render(request, prompt.html, {'index': prompt})
